@@ -1,0 +1,134 @@
+/* Identidad UAO (Manual de Identidad, julio 2026) · Órbita 1: identidad visual UAO + descriptor genérico.
+   Proporción de color: dominantes 60 % (rojo principal + crema) · subordinados 35 % · acentos 5 %.
+   Layout: barra lateral blanca con el logo UAO | CRAI + área de trabajo sobre crema; portada con el «arco». */
+:root{
+  --rojo:#FF051E; --crema:#FBF5EC; --granate:#AC0B32; --vino:#8A1428; --salmon:#FF836C; --blanco:#FFFFFF;
+  --verde-acento:#00C6A1; --verde-suave:#E0EEE6; --naranja-acento:#FE9800; --naranja-suave:#FFB166;
+  --bg:var(--crema); --surface:var(--blanco); --ink:#1E1A1A; --muted:#625A55; --line:#EADFD2;
+  --accent:var(--rojo); --accent-soft:var(--crema); --teal:var(--vino); --teal-soft:var(--crema);
+  --ok:var(--ink); --ok-soft:var(--verde-suave); --warn:var(--ink); --warn-soft:#FFE2C2;
+  --display:"DM Sans", Arial, sans-serif;
+  --body:"DM Sans", Arial, sans-serif;
+  --r:16px;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 var(--body)}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.2;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h1{font-size:2.4rem;font-weight:700} h2{font-size:1.7rem} h3{font-size:1.2rem} h4{font-size:1.05rem;margin-top:1.2em}
+a{color:var(--vino)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--vino);outline-offset:2px}
+.app{display:grid;grid-template-columns:284px 1fr;min-height:100%}
+nav.side{background:var(--surface);border-right:1px solid var(--line);padding:20px 14px;position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column;gap:4px}
+.brand{padding:16px 8px 18px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.lockup{display:flex;align-items:center;gap:10px}
+.lockup svg.uao{width:84px;height:auto;flex:none}
+.lockup .sep{width:2px;align-self:stretch;background:#9B9B9B;border-radius:2px}
+.lockup .crai{font-weight:700;font-size:.68rem;line-height:1.15;color:#231F20}
+.lockup .crai b{display:block;font-size:.86rem}
+.descriptor{display:inline-block;margin-top:22px;background:var(--rojo);color:#fff;font-weight:600;font-size:.86rem;padding:5px 12px;border-radius:10px}
+.navgrp{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:12px 10px 4px}
+nav.side a{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:.92rem}
+nav.side a:hover{background:var(--bg)}
+nav.side a.on{background:var(--crema);color:var(--rojo);font-weight:600;box-shadow:inset 3px 0 0 var(--rojo)}
+.dot{width:9px;height:9px;border-radius:50%;border:2px solid var(--line);flex:none}
+.dot.half{border-color:var(--salmon);background:linear-gradient(90deg,var(--salmon) 50%,transparent 50%)}
+.dot.full{border-color:var(--verde-acento);background:var(--verde-acento)}
+main{padding:28px clamp(16px,4vw,48px) 60px;max-width:1040px;width:100%;min-width:0}
+.eyebrow{color:var(--rojo);font-weight:600;font-size:.82rem;letter-spacing:.02em}
+.lead{color:var(--muted);font-size:1.05rem;max-width:68ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.stack{display:flex;flex-direction:column;gap:18px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.prose p,.prose ul,.prose ol{max-width:72ch}
+.prose p,.prose li{margin:.5em 0}
+.tbl{border-collapse:collapse;width:100%;font-size:.9rem;margin:.6em 0}
+.tbl th,.tbl td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.tbl th{font-weight:600;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+.tblwrap{overflow-x:auto}
+.clave{border-left:4px solid var(--rojo);background:var(--crema);padding:10px 14px;border-radius:0 8px 8px 0;margin:1em 0}
+.pill{display:inline-flex;align-items:center;gap:4px;font-size:.75rem;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--bg);color:var(--muted);border:1px solid var(--line);white-space:nowrap}
+.pill.req{background:var(--rojo);color:#fff;border-color:transparent}
+.pill.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.pill.warn{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.pill.teal{background:var(--crema);color:var(--vino);border-color:var(--line)}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);padding:7px 14px;border-radius:8px;cursor:pointer;font-weight:500;font-size:.9rem;text-decoration:none;color:var(--ink)}
+.btn:hover{border-color:var(--rojo)}
+.btn.primary{background:var(--rojo);border-color:var(--rojo);color:#fff;font-weight:600}
+.btn.primary:hover{background:var(--granate);border-color:var(--granate)}
+.btn.sm{padding:4px 10px;font-size:.82rem}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.between{justify-content:space-between}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+.stat b{display:block;font-family:var(--display);font-weight:700;font-size:1.9rem;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{color:var(--muted);font-size:.85rem}
+.bar{height:8px;background:var(--bg);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;background:var(--rojo);border-radius:99px}
+.wk-tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:18px 0 0}
+.wk-tabs button{border:0;background:none;padding:9px 14px;cursor:pointer;color:var(--muted);font-weight:500;border-bottom:3px solid transparent;margin-bottom:-1px}
+.wk-tabs button.on{color:var(--rojo);border-bottom-color:var(--rojo)}
+.act{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line)}
+.act:last-child{border-bottom:0}
+.chk{width:22px;height:22px;border-radius:6px;border:2px solid var(--line);display:grid;place-items:center;cursor:pointer;background:var(--surface);margin-top:2px;padding:0}
+.chk.on{background:var(--verde-acento);border-color:var(--verde-acento);color:#fff}
+.act h4{margin:0;font-size:1rem}
+.act p{margin:4px 0 0;color:var(--muted);font-size:.9rem}
+.reading{display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.reading:last-child{border-bottom:0}
+.reading .t{font-weight:600}
+.reading .a{color:var(--muted);font-size:.88rem}
+.reading .n{font-size:.88rem;margin-top:3px}
+label{font-weight:500;font-size:.88rem;display:block;margin-bottom:4px}
+input[type=text],input[type=email],select,textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:var(--surface)}
+textarea{min-height:90px;resize:vertical;line-height:1.5}
+.q{padding:14px 0;border-bottom:1px solid var(--line)}
+.q:last-child{border-bottom:0}
+.q p{margin:0 0 8px;font-weight:500}
+.opt{display:flex;gap:8px;align-items:flex-start;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:5px 0;cursor:pointer;font-weight:400}
+.opt:hover{border-color:var(--rojo)}
+.opt.right{border-color:var(--verde-acento);background:var(--verde-suave)}
+.opt.wrong{border-color:var(--salmon);background:#FFEDE9}
+.fb{font-size:.88rem;margin-top:6px;color:var(--muted)}
+.likert{display:grid;grid-template-columns:1fr repeat(5,40px);gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.likert input{width:18px;height:18px;justify-self:center}
+.likert.head{font-size:.75rem;color:var(--muted);text-align:center;border:0}
+.likert.head span:first-child{text-align:left}
+.modal{position:fixed;inset:0;background:rgba(10,15,20,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:20}
+.modal.open{display:flex}
+.modal .card{max-width:760px;width:100%;max-height:88vh;overflow:auto}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:8px;font-size:.9rem;opacity:0;transition:opacity .25s;pointer-events:none;z-index:30}
+.toast.show{opacity:1}
+.muted{color:var(--muted)}
+.small{font-size:.85rem}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.timeline .m{border-top:4px solid var(--rojo);padding-top:8px}
+.timeline .m:nth-child(2){border-color:var(--granate)}
+.timeline .m:nth-child(3){border-color:var(--vino)}
+.timeline .m:nth-child(4){border-color:var(--salmon)}
+.chart svg{width:100%;height:auto;display:block}
+.chart text{fill:var(--muted);font-family:var(--body)}
+.mobilebar{display:none}
+/* El arco (Manual UAO, p. 50–51): círculo de diámetro 4X; rectángulo base de 4X × 2X al que se resta,
+   en el centro del borde inferior, el segmento de 2/3X de ese círculo (radio 2X). Solo se alarga o ensancha
+   desde los lados y el borde superior: la curva inferior conserva su medida. La forma la dibuja shapeArcos(). */
+.arco{--x:110px;background:var(--rojo);color:#fff;min-height:calc(2 * var(--x));padding:34px clamp(22px,4vw,44px) calc(var(--x) * 2 / 3 + 26px);border-radius:calc(var(--x) * .14)}
+.arco h1{color:#fff;font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.05;margin:12px 0 6px}
+.arco .slogan{font-size:clamp(1.1rem,2.2vw,1.45rem);font-weight:300;margin:0 0 14px}
+.arco p{max-width:60ch;margin:0;color:#fff}
+.arco .tag{display:inline-block;background:#fff;color:var(--rojo);font-weight:600;font-size:.82rem;padding:4px 12px;border-radius:10px}
+@media (max-width:860px){
+  .app{grid-template-columns:1fr}
+  nav.side{position:static;height:auto;flex-direction:row;overflow-x:auto;padding:8px;border-right:0;border-bottom:1px solid var(--line);gap:2px}
+  nav.side .navgrp{display:none}
+  nav.side .brand{border:0;margin:0;padding:4px 8px}
+  nav.side .brand .crai,nav.side .brand .sep,nav.side .descriptor{display:none}
+  nav.side .lockup svg.uao{width:56px}
+  nav.side a{white-space:nowrap;flex:none}
+  .timeline{grid-template-columns:1fr 1fr}
+  .likert{grid-template-columns:1fr repeat(5,28px)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{nav.side,.noprint{display:none!important}.app{display:block}}
